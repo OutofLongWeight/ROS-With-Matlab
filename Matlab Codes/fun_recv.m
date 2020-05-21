@@ -1,69 +1,78 @@
-% ÓÉÓÚROSĞÅºÅ»úÖÆµ¼ÖÂ²»ÊÇÍ¬Ò»Ì¨»úÆ÷Ê±ĞèÒªÏÈ¿ªÆômatlab×÷Îªrosmaster½Úµã
-% ÏêÏ¸²½ÖèÈçÏÂ£º
-% Á½±ßµÄ·À»ğÇ½Ò»¶¨Òª¹Ø
-% Ê×ÏÈÆô¶¯matlab ÉèÖÃmatlab°æ±¾´óÓÚ2016a·ñÔòÃ»ÓĞros¹¤¾ßÏä
-%   setenv('ROS_MASTER_URI','´Ë´¦Îª¿Õ');
-%   setenv('ROS_IP','±¾»ú');
-%   matlabÖ´ĞĞrosinitÃüÁî
-% Á½±ßµÄ·À»ğÇ½Ò»¶¨Òª¹Ø
-% ½ÓÏÂÀ´Æô¶¯ROSËùÔÚ»úÆ÷Æô¶¯terminal ¿ì½İ¼üCtrl+Alt+T
-%   sudo vim ~/.bashrc ÔÚÎÄ¼şÖĞÌí¼Ó ÒÔÏÂÁ½¾äip²»¼Óµ¥ÒıºÅ
-%   export ROS_IP=ÉãÏñÍ·ËùÔÚip
-%   export ROS_MASTER_URI=http://matlabËùÔÚip:11311
-% È»ºó¹Ø±Õterminal´°¿Ú ÖØ¿ªÒ»¸öterminalÔÚrosÆô¶¯roscore¿ÉÄÜ»á±¨´í£¬²»ÖØÒª£¨£¾ÈË£¼£»£©
-% Á½±ßµÄ·À»ğÇ½Ò»¶¨Òª¹Ø
-% Æô¶¯ÉãÏñÍ·
-% ÔÚmatlabÖ´ĞĞrosnode list,rosnode info nodeÃû,rostopic list,rostopic info
-% topicÃû£¬rostopic echo topicÃû Èç¹ûÕâĞ©ÃüÁî¶¼Ã»ÎÊÌâ¾ÍºÃÁË
-% È»ºó¾Í¿ÉÒÔ¿ªĞÄµÄÊ¹ÓÃmatlab³ÌĞòÁË[]~(£ş¨Œ£ş)~*
-% Èö»¨*¡ï,¡ã*:.¡î(£ş¨Œ£ş)/$:*.¡ã¡ï* ¡£Èö»¨
+% ç”±äºROSä¿¡å·æœºåˆ¶å¯¼è‡´ä¸æ˜¯åŒä¸€å°æœºå™¨æ—¶éœ€è¦å…ˆå¼€å¯matlabä½œä¸ºrosmasterèŠ‚ç‚¹
+% è¯¦ç»†æ­¥éª¤å¦‚ä¸‹ï¼š
+% ä¸¤è¾¹çš„é˜²ç«å¢™ä¸€å®šè¦å…³
+% é¦–å…ˆå¯åŠ¨matlab è®¾ç½®matlabç‰ˆæœ¬å¤§äº2016aå¦åˆ™æ²¡æœ‰roså·¥å…·ç®±
+%   setenv('ROS_MASTER_URI','æ­¤å¤„ä¸ºç©º');
+%   setenv('ROS_IP','æœ¬æœº');
+%   matlabæ‰§è¡Œrosinitå‘½ä»¤
+% ä¸¤è¾¹çš„é˜²ç«å¢™ä¸€å®šè¦å…³
+% æ¥ä¸‹æ¥å¯åŠ¨ROSæ‰€åœ¨æœºå™¨å¯åŠ¨terminal å¿«æ·é”®Ctrl+Alt+T
+%   sudo vim ~/.bashrc åœ¨æ–‡ä»¶ä¸­æ·»åŠ  ä»¥ä¸‹ä¸¤å¥ipä¸åŠ å•å¼•å·
+%   export ROS_IP=æ‘„åƒå¤´æ‰€åœ¨ip
+%   export ROS_MASTER_URI=http://matlabæ‰€åœ¨ip:11311
+% ç„¶åå…³é—­terminalçª—å£ é‡å¼€ä¸€ä¸ªterminalåœ¨roså¯åŠ¨roscoreå¯èƒ½ä¼šæŠ¥é”™ï¼Œä¸é‡è¦ï¼ˆï¼äººï¼œï¼›ï¼‰
+% ä¸¤è¾¹çš„é˜²ç«å¢™ä¸€å®šè¦å…³
+% å¯åŠ¨æ‘„åƒå¤´
+% åœ¨matlabæ‰§è¡Œrosnode list,rosnode info nodeå,rostopic list,rostopic info
+% topicåï¼Œrostopic echo topicå å¦‚æœè¿™äº›å‘½ä»¤éƒ½æ²¡é—®é¢˜å°±å¥½äº†
+% ç„¶åå°±å¯ä»¥å¼€å¿ƒçš„ä½¿ç”¨matlabç¨‹åºäº†[]~(ï¿£â–½ï¿£)~*
+% æ’’èŠ±*â˜…,Â°*:.â˜†(ï¿£â–½ï¿£)/$:*.Â°â˜…* ã€‚æ’’èŠ±
 
-% ´Ë³ÌĞòÊÇÓÃÀ´½ÓÊÜrosÉãÏñÍ·Êı¾İ×ª»¯ÎªÍ¼Ïñ¾ØÕó²¢µ÷ÓÃ´¦Àí³ÌĞò½«½á¹û·¢²¼³öÈ¥
+% æ­¤ç¨‹åºæ˜¯ç”¨æ¥æ¥å—rosæ‘„åƒå¤´æ•°æ®è½¬åŒ–ä¸ºå›¾åƒçŸ©é˜µå¹¶è°ƒç”¨å¤„ç†ç¨‹åºå°†ç»“æœå‘å¸ƒå‡ºå»
 
-sub = rossubscriber('/usb_cam/image_raw');% ¶©ÔÄ»°Ìâ
-[pub,pub_msg] = rospublisher('/dowhat','std_msgs/String');% ·¢²¼
+to = cputime;
+sub = rossubscriber('/usb_cam/image_raw');% è®¢é˜…è¯é¢˜
+[pub,pub_msg] = rospublisher('/dowhat','std_msgs/String');% å‘å¸ƒ
 pub_msg.Data = '';
 % while 1
     close all;
-    rev=receive(sub,1);% ×î¶àÒ»ÃëµÈ´ı½ÓÊÜ»°ÌâÄÚÈİ£¬ÓĞ»º´æÖ»Òª»¥Í¨Æô¶¯ÁËÉãÏñÍ·¾ÍÓĞÍ¼Ïñ
-    % ´«ÈëÍ¼ÏñÊÇ¾ØÕóĞèÒª»ñÈ¡Èı¸öÍ¨µÀµÄÖµ¸ù¾İros³ÌĞò¶ÁÈ¡µÄÄ£Ê½
+    rev=receive(sub,1);% æœ€å¤šä¸€ç§’ç­‰å¾…æ¥å—è¯é¢˜å†…å®¹ï¼Œæœ‰ç¼“å­˜åªè¦äº’é€šå¯åŠ¨äº†æ‘„åƒå¤´å°±æœ‰å›¾åƒ
+    % ä¼ å…¥å›¾åƒæ˜¯çŸ©é˜µéœ€è¦è·å–ä¸‰ä¸ªé€šé“çš„å€¼æ ¹æ®rosç¨‹åºè¯»å–çš„æ¨¡å¼
     r=zeros(rev.Width,rev.Height);
     g=zeros(rev.Width,rev.Height);
     b=zeros(rev.Width,rev.Height);
     
-    img=reshape(rev.Data,rev.Width*3,rev.Height);% rgbÈı¸öÍ¨µÀËùÒÔ¿í*3
+    img=reshape(rev.Data,rev.Width*3,rev.Height);% rgbä¸‰ä¸ªé€šé“æ‰€ä»¥å®½*3
     for i = 1:rev.Width
-        r(i,:)=img(i*3-2,:);% ºì
-        g(i,:)=img(i*3-1,:);% ÂÌ
-        b(i,:)=img(i*3,:);% À¶
+        r(i,:)=img(i*3-2,:);% çº¢
+        g(i,:)=img(i*3-1,:);% ç»¿
+        b(i,:)=img(i*3,:);% è“
     end
     
-    I=zeros(rev.Width,rev.Height,3);% ºÏ³É²ÊÉ«Í¼Ïñ
-    % uint8Ò»¶¨Òª¼ÓÉÏ£¬²»È»×îºóÊä³öI²»¶Ô£¬matlabÕâÑùÈ¡Ö®ºórgb¾ØÕóÊÇdouble(¥Î¤Ø£ş¡¢)
+    I=zeros(rev.Width,rev.Height,3);% åˆæˆå½©è‰²å›¾åƒ
+    % uint8ä¸€å®šè¦åŠ ä¸Šï¼Œä¸ç„¶æœ€åè¾“å‡ºIä¸å¯¹ï¼Œmatlabè¿™æ ·å–ä¹‹årgbçŸ©é˜µæ˜¯double(ãƒã¸ï¿£ã€)
     I(:,:,1)=uint8(r);
     I(:,:,2)=uint8(g);
     I(:,:,3)=uint8(b);
     
-    I=uint8(imrotate(flipud(I),-90));% ÓÉÓÚÊÇÁ÷Ê½Êä³öµÄÊı¾İµ¼ÖÂ·½Ïò´ÓºáÏò±ä³ÉÁË×İÏò£¬
-    % Í¬Ê±ÓÉÓÚrgbÈı¸öÍ¨µÀ»ñÈ¡Êı¾İÊ±ÊÇ´Ó×óµ½ÓÒºáÏòÒ²¾ÍÊÇËµÍ¼Ïñ±ä³ÉÁË¾µÏñ(lll©V¦Ø©V)
-    % ´Ë´¦uint8Ò»¶¨Òª¼Ó
+    I=uint8(imrotate(flipud(I),-90));% ç”±äºæ˜¯æµå¼è¾“å‡ºçš„æ•°æ®å¯¼è‡´æ–¹å‘ä»æ¨ªå‘å˜æˆäº†çºµå‘ï¼Œ
+    % åŒæ—¶ç”±äºrgbä¸‰ä¸ªé€šé“è·å–æ•°æ®æ—¶æ˜¯ä»å·¦åˆ°å³æ¨ªå‘ä¹Ÿå°±æ˜¯è¯´å›¾åƒå˜æˆäº†é•œåƒ(lllï¿¢Ï‰ï¿¢)
+    % æ­¤å¤„uint8ä¸€å®šè¦åŠ 
     imshow(I);
-    % µ÷ÓÃÊ¶±ğ³ÌĞò
+    % è°ƒç”¨è¯†åˆ«ç¨‹åº
     res = imgpro(I,newnet)
-    % ÔİÍ£50s¸ø³ÌĞò´¦ÀíµÄÊ±¼ä
+    % æš‚åœ50sç»™ç¨‹åºå¤„ç†çš„æ—¶é—´
 %     [l,n]=size(res);
 %     for j=1:n
 %         pub_msg.Data=char(strcat(pub_msg.Data,string(res(j))));
 %     end
+char(res{1})
 try
-    pub_msg.Data=char(res(1));
+    pub_msg.Data=char(res{1});
 catch
     try
-        pub_msg.Data=char(res(2));
+        pub_msg.Data=char(res{2});
     catch
-        pub_msg.Data=char(res(3));
+        try
+            pub_msg.Data=char(res{3});
+        catch
+            disp('æ— ç»“æœ')
+        end
     end
 end
     send(pub,pub_msg);
+    
+disp('è¿è¡Œæ—¶é—´ç»Ÿè®¡ï¼š')
+cputime-to
 %     pause(30)
 % end
